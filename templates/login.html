@@ -1,0 +1,39 @@
+{% from "bootstrap5/form.html" import render_form %} {% block content %} {%
+include "header.html" %}
+
+<!-- Page Header -->
+<header>
+  
+    <div class="top-container">
+    
+    <div class="title-text">
+      <h1>Log In</h1>
+      <span class="subheading">Welcome Back!</span>
+    </div>
+   
+    
+        <main class="mb-4">
+            <div class="container">
+              <div class="row">
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                     {% for message in messages %}
+                         <p class="flash">{{ message }}</p>
+                     {% endfor %}
+                  {% endif %}
+               {% endwith %}
+
+                <div class="col-lg-8 col-md-10 mx-auto">
+                 {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                </div>
+              </div>
+            </div>
+         </main>
+    </div>
+
+  
+</header>
+
+
+
+{% include "footer.html" %} {% endblock %}

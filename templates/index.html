@@ -1,0 +1,149 @@
+{% include "header.html" %}
+
+
+
+
+  <div class="top-container">
+    
+    <div class="title-text">
+      <h1>I'm Ali.</h1>
+    </div>
+    
+  </div>
+
+
+ <div class="middle-container">
+        <div class="About Me ">
+          <hr>
+          <h2 class="pb-2 border-bottom">About Me</h2>
+          
+          <span class="avatar"><img src="static/assets/img/avatar.png" alt="avatar" /></span>
+           
+          {% for data in aboutdata %}
+          <h3>{{data.title|safe}}</h3>
+          <p class="intro">{{data.body|safe}}</p>
+          {% if current_user.id==1 : %}
+                <a class="btn" href="{{url_for('edit_about',about_id=data.id) }}">✏️</a>
+          
+          {% endif %}
+          
+          {% endfor %}
+          
+          {% if current_user.id==1 : %}
+    
+          <a class="btn" href="{{url_for('add_about')}}">+ADD</a>
+           
+           {% endif %}
+    
+          
+        </div>
+
+
+
+    
+
+ 
+
+
+<hr>   
+
+
+
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">My Skills</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      {% for skill in all_skill %}
+      <div class="feature col">
+        
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <<img  src={{skill.img_url}} height="30">
+        </div>
+         
+        <h3 class="fs-2 text-body-emphasis">{{skill.title|safe}}</h3>
+        <p>{{skill.body|safe}}</p>
+        {% if current_user.id==1 : %}
+      <a class="btn" href="{{url_for('delete_skill', skill_id=skill.id) }}">✘</a>
+      <a class="btn" href="{{url_for('edit_skill', skill_id=skill.id) }}">✏️</a>
+          
+        {% endif %}
+    
+      </div>
+      {% endfor %}
+
+      
+      {% if current_user.id==1 : %}
+      
+        <a class="btn" href="{{url_for('add_new_skill') }}">+ADD</a>
+           
+      {% endif %}
+      
+      
+      </div>
+    </div>
+
+  
+     
+       
+     
+
+
+   
+
+
+<hr>
+
+
+
+
+  
+
+    <div class="skills">
+      <h2 class="pb-2 border-bottom">Check out my projects!</h2>
+       {% for project in projectsdata %}
+      <p class="intro">{{project.body|safe}}</p>
+      {% if current_user.id==1 : %}
+            <a class="btn" href="{{url_for('edit_project',project_id=project.id) }}">✏️</a>
+      
+      {% endif %}
+      
+      {% endfor %}
+      
+      {% if current_user.id==1 : %}
+
+      <a class="btn" href="{{url_for('add_project')}}">+ADD</a>
+       
+       {% endif %}
+    </div>
+  <hr>
+ </div>
+
+ 
+
+
+
+  <div class="bottom-container">
+
+    <div class="contact-me">
+      <h2>contact Me!</h2>
+      
+      <h3>Have Questions? I Have Answers !</h3>
+      
+      <p class="contact-message"> Let's get in touch , chat together , and try  to benefit from each other's Experiences, exchange Knowledge, and seek Development and Assistance, and this is the most important thing that distinguishes the world of Programming! </p>
+      
+      <a class="btn" href="bitbull026@gmail.com">CONTACT ME</a>
+    </div>
+    
+  </div>
+
+
+  
+
+
+
+    
+
+{% include "footer.html" %}
+
+
+
+      
