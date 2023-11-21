@@ -68,7 +68,7 @@ class Skill(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(250), unique=True, nullable=False)
     body = db.Column(db.Text, nullable=False)
-    img_url = db.Column(db.String(250), nullable=False)
+    icon = db.Column(db.String(1000), nullable=False)
 
     
 
@@ -271,7 +271,7 @@ def add_new_skill():
         new_skill = Skill(
             title=form.title.data,
             body=form.body.data,
-            img_url=form.img_url.data,
+            icon=form.icon.data,
         )
         db.session.add(new_skill)
         db.session.commit()
@@ -335,13 +335,13 @@ def edit_skill(skill_id):
   
     edit_form = CreatePostForm(
         title=skill_to_edit.title,
-        img_url=skill_to_edit.img_url,
+        icon=skill_to_edit.icon,
         body=skill_to_edit.body)
 
   
     if edit_form.validate_on_submit():
         skill_to_edit.title = edit_form.title.data
-        skill_to_edit.img_url = edit_form.img_url.data
+        skill_to_edit.icon = edit_form.icon.data
         skill_to_edit.body = edit_form.body.data
         db.session.commit()
         return redirect(url_for("home"))
@@ -443,22 +443,13 @@ def delete_skill(skill_id):
 
 
 #**************************************************************************#
-@app.route('/delete25465542')
-def delete():
 
-    results = db.session.execute(db.select(User).order_by(User.id)).scalars()
-    for result in results.all():
-        db.session.delete(result)
-        db.session.commit()
-    return redirect(url_for('home'))
 
 
 #**************************************************************************#
 
-
 if __name__ == "__main__":
-  
-    app.run(host='0.0.0.0', port=5002 )
+    app.run(debug=True, port=5001)
 
 
 
