@@ -3,10 +3,11 @@
 
 
 
-  <div class="top-container">
+  <div class="top-container mt-0 ">
     
-    <div class="title-text">
+    <div class="title-text py-5">
       <h1>I'm Ali.</h1>
+      
     </div>
     
   </div>
@@ -14,9 +15,14 @@
 
  <div class="middle-container">
         <div class="About Me ">
-          <hr>
-          <h2 class="pb-2 border-bottom">About Me</h2>
-          
+        
+          <div class="container px-4 " id="featured-3">
+          <h2 class="pb-2 " >. About Me .</h2>
+          <div>
+          <p class="contact-message pb-5">A highly skilled Python developer,
+             who looks forward to further development and learning and committed to doing so, and always ready to get feedback.
+             </p>
+            </div>
           <span class="avatar"><img src="static/assets/img/avatar.png" alt="avatar" /></span>
            
           {% for data in aboutdata %}
@@ -38,7 +44,7 @@
           
         </div>
 
-
+      </div>
 
     
 
@@ -49,7 +55,7 @@
 
 
 
-<div class="container px-4 py-5" id="featured-3">
+<div class="container px-4 py-3" id="featured-3">
     <h2 class="pb-2 border-bottom">My Skills</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       {% for skill in all_skill %}
@@ -102,7 +108,7 @@
   
 
     <div class="skills">
-      <h2 class="pb-2 border-bottom">Check out my projects!</h2>
+      <h2 class="pb-2">. Check out my projects! .</h2>
        {% for project in projectsdata %}
       <p class="intro">{{project.body|safe}}</p>
       {% if current_user.id==1 : %}
@@ -128,7 +134,7 @@
   <div class="bottom-container">
 
     <div class="contact-me">
-      <h2>contact Me!</h2>
+      <h2>. Contact Me! .</h2>
       
       <h3>Have Questions? I Have Answers !</h3>
       

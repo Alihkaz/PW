@@ -10864,9 +10864,7 @@ header.masthead .post-heading .meta a {
     border-radius: 0.75rem;} 
 
 
-.list-inline-item{
-  
-}
+
 
 
 body {
@@ -10931,17 +10929,16 @@ a:hover {
 
 .top-container {
   background-color: #FFF2D8;
-  position: relative;
-  margin: 15px 0;
-  padding-top: 85px;
-  padding-bottom: 85px;
+  position: relative; 
+  margin-bottom: 0px;
 }
+
+
+
 
 .middle-container {
   background-color: #FF6969;
-  margin: 15px 0;
-  padding-top: 85px;
-  padding-bottom: 85px;
+  padding: 55px 0 50px;
 }
 
 
@@ -11026,11 +11023,11 @@ a:hover {
 
 
 .avatar img {
-				display: block;
+			
 				margin: 0 auto;
-				border-radius: 100%;
-        max-width: 30%;
-        max-height: 30%;
+				border-radius: 50%;
+        width: 330px;
+        height: 320px;
 				
 			}
 
